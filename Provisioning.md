@@ -21,14 +21,14 @@ I have been researching Vagrant lately and had a sample ubuntu Vagrantfile alrea
     
 3. For installing docker-ce, I decided it would be handy to write a small shell script to do this during provisioning time in Vagrant. I wrote a small shell script to run the required commands from [Docker's installation guide](https://docs.docker.com/get-started/). I was then able to run the shell script from the Vagrantfile via the [config.vm.provision](https://www.vagrantup.com/docs/provisioning/shell.html) shell provisioner. I piped the stdout from the commands to /dev/null and included 2>&1 to redirect stderr to stdout to suppress any warnings or errors, this will keep things nice and clean during provisioning. To flesh this out I might include a "debug" mode to toggle off this behaviour to diagnose any problems.  
 
-We can then destroy and bring vagrant back up to see the shell script run as per below
+    We can then destroy and bring vagrant back up to see the shell script run as per below
 
-![Docker installation](images/DockerInstallation.png)  
+    ![Docker installation](images/DockerInstallation.png)  
 
-Afterward, we can verify that docker is installed via `docker --version` and verify everything is working by running `sudo docker run hello-world`
+    Afterward, we can verify that docker is installed via `docker --version` and verify everything is working by running `sudo docker run hello-world`
 
-![Docker version](images/DockerVersion.png)  
+    ![Docker version](images/DockerVersion.png)  
 
-![Docker hello-world](images/HelloWorld.png)  
+    ![Docker hello-world](images/HelloWorld.png)  
 
 Now that we have our development environment provisioned, we can move onto writing the Python script!

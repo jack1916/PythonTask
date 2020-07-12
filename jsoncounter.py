@@ -4,14 +4,14 @@ import argparse
 import os
 import sys
 
+   #Count Json files in the directory passed to the method, returns the length of a list of all .json files in the directory
 def countJsonFiles(path):
     if(not os.path.isdir(path)):
         print('The supplied path is not a directory')
         sys.exit()
     list_json = [x for x in os.listdir(path) if x.endswith(".json")]
     return len(list_json)
-        
-   #Count Json files in the directory passed to the method
+   #Configure argparse, return the args namespace object     
 def parseArgs(args):
     parser = argparse.ArgumentParser(description ='Count .json files in a directory')
     parser.add_argument('directory', help="the directory you would like to search")

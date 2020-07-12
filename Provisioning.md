@@ -5,7 +5,7 @@ I have been researching Vagrant lately and had a sample ubuntu Vagrantfile alrea
 2. I then used `vagrant ssh` to login to the VM and did the following
     * Current CPU load: This can be seen in realtime using `top`, if we wanted a simple snapshot we could also use `top -bn1 | grep "%CPU(s)"`. The b flag sets top to execute in 'batch' mode, allowing us to use the output for piping to grep and n sets the number of iterations to occur, in this case 1. The us part is the load used by userland processes, and the sy is the load used by kernel processes, ni are the 'niced' user processes, idle and wait are the processes in idle or waiting for IO respectively. This information was gotten using `man top`
     
-    ![Current CPU load](images/CPUState.png)  
+    ![Current CPU load](images/CPUstate.png)  
     
     * Available memory: we can use `top` again or alternatively use `free`. `free -h` gives a more readable format by displaying the data in a clearer human readable table. This displays both Memory usage and Swap, so we might want to pipe it to `grep` to only see Mem if Swap is not required.
     
